@@ -22,16 +22,16 @@ export const firestore = firebase.firestore();
 
 
 // google authentication
-const provider = new firebase.auth.GoogleAuthProvider();
+const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
 // config for the provider
 // enable pop-up to select email account
-provider.setCustomParameters({
+googleAuthProvider.setCustomParameters({
   prompt: 'select_account'
 });
 
 // export sign-in with google method
-export const signInWithGoogle = () => auth.signInWithPopup(provider);
+export const signInWithGoogle = () => auth.signInWithPopup(googleAuthProvider);
 
 // export firebase too
 export default firebase;
